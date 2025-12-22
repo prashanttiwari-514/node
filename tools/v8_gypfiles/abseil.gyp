@@ -369,7 +369,15 @@
         '<(ABSEIL_ROOT)/absl/types/span.h',
         '<(ABSEIL_ROOT)/absl/types/variant.h',
         '<(ABSEIL_ROOT)/absl/utility/utility.h',
-      ]
+      ],
+      'conditions': [
+        ['OS=="win"', {
+          'sources': [
+            '<(ABSEIL_ROOT)/absl/time/internal/cctz/src/time_zone_name_win.h',
+            '<(ABSEIL_ROOT)/absl/time/internal/cctz/src/time_zone_name_win.cc',
+          ],
+        }],
+      ],
     },  # abseil
   ]
 }
